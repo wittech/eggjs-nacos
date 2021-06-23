@@ -2,7 +2,7 @@
 
 const assert = require('assert');
 const { address } = require('ip');
-const { NacosNamingClient } = require('nacos');
+const { NacosNamingClient } = require('nacos-naming');
 const Subscribe = require('./lib/subscribe');
 
 /**
@@ -33,6 +33,8 @@ class AppBootHook {
       logger: this.app.logger,
       serverList,
       namespace: client.namespace,
+      username: client.username,
+      password: client.password
     })
 
     await nacosClient.ready();
