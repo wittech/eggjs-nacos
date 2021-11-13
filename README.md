@@ -32,6 +32,8 @@ exports.nacos = {
     namespace: "", // 必填，  命名空间ID，用于后续服务注册、服务发现
     serviceName: "", // 非必填, 服务名称， 默认自动获取package.json中的name
     groupName: "", // 非必填, 分组名称 默认 DEFAULT_GROUP
+    username: 'user', // 非必填
+    password: 'pass', // 非必填
   },
   subscribers: {
     test01Service: {
@@ -154,9 +156,7 @@ config.redis = {
 ### config
 
 - `fetchRemoteNacosConfig(clientOptions, configOptions)` 获取远程 Nacos 配置信息
-  - clientOptions {Object}
-    - serverAddr {String} nacos 服务地址
-    - namespace {String} 命名空间 ID
+  - clientOptions {[ClientOptions]( https://github.com/nacos-group/nacos-sdk-nodejs/blob/master/packages/nacos-config/src/interface.ts#L247)}
   - configOptions {Array}
     - namespace {String} 命名空间 ID, 优先使用
     - configs {Array}

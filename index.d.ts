@@ -32,8 +32,9 @@ declare module "egg" {
                 namespace: string, // 命名空间ID
                 serviceName?: string, // 服务名称
                 groupName?: string, // 分组
-                username?: string,  // 用户名
-                password?: string   // 密码
+                username?: tring,
+                password?: tring,
+                [key: string]: any;
             },
             subscribers: {
                 [key: string]: {
